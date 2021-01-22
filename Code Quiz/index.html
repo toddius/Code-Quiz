@@ -12,6 +12,77 @@
     <title>Code Quiz</title>
   </head>
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">View High Scores</a>
+        <div class="d-flex">
+          <div></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container content-justify-center">
+      <div class="row justify-content-center align-items-center" id="gameIntro">
+           <h1>Coding Quiz Challenge</h1>
+           <p>Try to answer the code related questions within the time
+           limit. Keep in mind incorrect answers will penalize your scoretime
+           by 10 seconds.</p>
+           <button type="button" class="btn btn-primary" id="startButton">Start Game</button>
+      </div> 
+    </div>
+
+    <div id="question1" style=display:none>
+      <h1>Commonly used data types DO NOT include: </h1>
+      <ol>
+        <li class="q1Wrong">strings</li>
+        <li class="q1Wrong">booleans</li>
+        <li id="q1Correct">alerts</li>
+        <li class="q1Wrong">numbers</li>
+      </ol>
+    </div>
+    
+    <div id="question2" style=display:none>
+      <h1>The condition in an if / else staement is enclosed within _________.</h1>
+      <ol>
+        <li id="q2Wrong">quotes</li>
+        <li id="q2Correct">curly brackets</li>
+        <li id="q2Wrong">parentheses</li>
+        <li id="q2Wrong">square brackets</li>
+      </ol>
+    </div>
+    
+    <div id="question3" style=display:none>
+      <h1>Arrays within JavaScript can be used to store _________.</h1>
+      <ol>
+        <li id="q3Wrong">numbers and strings</li>
+        <li id="q3Wrong">other arrays</li>
+        <li id="q3Wrong">booleans</li>
+        <li id="q3Correct">all of the above</li>
+      </ol>
+    </div>
+    
+    <div id="question4" style=display:none>
+      <h1>String values must be enclosed within _________ when being assigned to variables.</h1>
+      <ol>
+        <li id="q4Wrong">commas</li>
+        <li class="q4Wrong">curly brackets</li>
+        <li id="q4Correct">quotes</li>
+        <li class="q4Wrong">paerntheses</li>
+      </ol>
+    </div>
+    
+    <div id="question5" style=display:none>
+      <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
+      <ol>
+        <li class="q5Wrong">JavaScript</li>
+        <li class="q5Wrong">teronal / bash</li>
+        <li class="q5Wrong">for loops</li>
+        <li id="q5Correct">console log</li>
+      </ol>
+    </div>
+    
+    
+   
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
