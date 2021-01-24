@@ -25,8 +25,8 @@
     </nav>
 
     <div class="container content-justify-center">
-      <div class="row justify-content-center align-items-center" id="gameIntro">
-        <div class="row col-6 justify-content-center align-items-center"> 
+      <div class="row justify-content-center align-items-center" >
+        <div class="row col-6 justify-content-center align-items-center" id="gameIntro"> 
           <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the code related questions within the time
             limit. Keep in mind incorrect answers will penalize your scoretime
@@ -36,106 +36,50 @@
       </div> 
     </div>
 
-    <div class="row justify-content-center align-items-center" id="question1" style=display:none>
-      <div class="row col-6">
-        <h1>Commonly used data types DO NOT include: </h1>
+    <div class="row justify-content-center align-items-center" >
+      <div class="row col-6" id="gamePlay" style=display:none>
+        <h2 id="question"></h2>
           <ul>
-            <li class="q1Wrong">
-              <button type="button" class="btn btn-primary">1. strings</button>
+            <li>
+              <button type="button" class="btn btn-primary" id="answer1"></button>
             </li>
-            <li class="q1Wrong">
-              <button type="button" class="btn btn-primary">2. booleans</button>
+            <li>
+              <button type="button" class="btn btn-primary" id="answer2"></button>
             </li>
-            <li id="q1Correct">
-              <button type="button" class="btn btn-primary">3. alerts</button>
+            <li>
+              <button type="button" class="btn btn-primary" id="answer3"></button>
             </li>
-            <li class="q1Wrong">
-              <button type="button" class="btn btn-primary">4. numbers</button>
+            <li>
+              <button type="button" class="btn btn-primary" id="answer4"></button>
             </li>
           </ul>
       </div>
     </div>
-    
-    <div class="row justify-content-center align-items-center" id="question2" style=display:none>
-      <div class="row col-6">
-        <h1>The condition in an if / else staement is enclosed within _________.</h1>
-          <ul>
-            <li id="q2Wrong">
-              <button type="button" class="btn btn-primary">1. quotes</button>
-            </li>
-            <li id="q2Correct">
-              <button type="button" class="btn btn-primary">2. curly brackets</button>
-            </li>
-            <li id="q2Wrong">
-              <button type="button" class="btn btn-primary">3. parentheses</button>
-            </li>
-            <li id="q2Wrong">
-              <button type="button" class="btn btn-primary">4. square brackets</button>
-            </li>
-          </ul>
-      </div>
+   
+    <div class="container content-justify-center">
+      <div class="row justify-content-center align-items-left" >
+        <div class="row col-6 justify-content-center align-items-left" id="finalScore" style=display:none> 
+            <h1>All done! </h1>
+            <p>Your score is <span id="countDownTimer"></span></p>
+            <form class="form-inline">
+              <div class="form-group mb-2">
+                <label for="initials" class="sr-only">Enter initials:</label>
+                <input type="text" readonly class="form-control-plaintext" id="initials" value="Enter initials:">
+              </div>
+              <div class="form-group mx-sm-2 mb-2">
+                <label for="inputInitials" class="sr-only"></label>
+                <input type="password" class="form-control" id="inputInitials" placeholder="">
+              </div>
+              <button type="submit" class="btn btn-primary mb-2" id="submitInitials">Submit</button>
+            </form>
+        </div>
+      </div> 
     </div>
-    
-    <div class="row justify-content-center align-items-center" id="question3" style=display:none>
-      <h1>Arrays within JavaScript can be used to store _________.</h1>
-        <ul>
-          <li id="q3Wrong">
-            <button type="button" class="btn btn-primary">1. strings</button>
-          </li>
-          <li id="q3Wrong">
-            <button type="button" class="btn btn-primary">2. other arrays</button>
-          </li>
-          <li id="q3Wrong">
-            <button type="button" class="btn btn-primary">3. booleans</button>
-          </li>
-          <li id="q3Correct">
-            <button type="button" class="btn btn-primary">4. all of the above</button>
-          </li>
-        </ul>
-    </div>
-    
-    <div class="row justify-content-center align-items-center" id="question4" style=display:none>
-      <h1>String values must be enclosed within _________ when being assigned to variables.</h1>
-        <ul>
-          <li id="q4Wrong">
-            <button type="button" class="btn btn-primary">1. commas</button>
-          </li>
-          <li class="q4Wrong">
-            <button type="button" class="btn btn-primary">2. curly brackets</button>
-          </li>
-          <li id="q4Correct">
-            <button type="button" class="btn btn-primary">3. quotes</button>
-          </li>
-          <li class="q4Wrong">
-            <button type="button" class="btn btn-primary">4. parentheses</button>
-          </li>
-        </ul>
-    </div>
-    
-    <div class="row justify-content-center align-items-center" id="question5" style=display:none>
-      <h1>A very useful tool used during development and debugging for printing content to the debugger is:</h1>
-        <ul>
-          <li class="q5Wrong">
-            <button type="button" class="btn btn-primary">1. JavaScript</button>
-          </li>
-          <li class="q5Wrong">
-            <button type="button" class="btn btn-primary">2. terminal / bash</button>
-          </li>
-          <li class="q5Wrong">
-            <button type="button" class="btn btn-primary">3. for loops</button>
-          </li>
-          <li id="q5Correct">
-            <button type="button" class="btn btn-primary">4. console log</button>
-          </li>
-        </ul>
-    </div>
-    
-    
    
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="../Code Quiz/Assets/JS/script.js"></script>
+    <!-- <script src="../Code Quiz/Assets/JS/script.js"></script> -->
   </body>
 </html>
