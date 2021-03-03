@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container-fluid" id="navigationBar">
         <a class="navbar-brand">View Highscores</a>
         <div class="d-flex">
           <div class="nav justify-content-end">
@@ -46,12 +46,13 @@
       <div class="row justify-content-center align-items-left" >
         <div class="row col-6 justify-content-center align-items-left" id="finalScore" style=display:none> 
             <h1>All done! </h1>
-            <br>
-            <p>Your score is <span id="countDownTimer"></span></p>
+            <div class="row col-6 justify-content-center">
+              <p>Your score is <span id="finalCountDownTimer"></span></p>
+            </div>
             <form class="form-inline">
               <div class="form-group mb-2">
                 <label for="initials" class="sr-only">Enter initials:</label>
-                <input type="text" readonly class="form-control-plaintext" id="initials" value="Enter initials:">
+                <input type="text" readonly class="form-control-plaintext" id="initials" placeholder="Enter initials:">
               </div>
               <div class="form-group mx-sm-2 mb-2">
                 <label for="initials" class="sr-only"></label>
@@ -59,6 +60,19 @@
               </div>
               <button type="submit" class="btn btn-primary mb-2" id="submitInitials">Submit</button>
             </form>
+        </div>
+
+        <div class="row col-6 justify-content-center align-items-left" id="highScores" style=display:none>
+          <h1>High Scores</h1>
+          <div>
+            <ol id="scoreList">
+
+            </ol>
+          </div>
+          <div>
+            <button id="goBack">Go Back</button>
+            <button id="clearScores">Clear high Scores</button>
+          </div>
         </div>
       </div> 
     </div>
