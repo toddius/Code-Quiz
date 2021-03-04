@@ -48,10 +48,18 @@ function startTimer () {
   },1000);
 }
 
+function startGame () {
+  // localStorage.clear();
+  timeleft = 0;
+  startTimer();
+  document.getElementById("gameIntro").style.display = "none";
+  // document.getElementById("highScores").style.display = "none";
+  document.getElementById("gamePlay").style.display = "inline-flex";
+  showQuestionIndex (currentQuestionIndex);
+}
 
 function scoreBoard (data) {
-  // console.log(data);
-  $("#gamePlay").remove();
+  document.getElementById("gamePlay").style.display = "none";
   $("#finalScore").attr("style", "display:inline-flex");
   $("#finalCountDownTimer").text(data.toString());
 }
@@ -69,7 +77,7 @@ function getDisplayScores(formValue, score) {
   var userInitials = formValue.val();
   var userScore = score;
   localStorage.setItem(userInitials, userScore);
-  showHighScores();
+  showHighScores(userInitials, userScore);
 }
 
 $("form").on("submit", function(e) {
@@ -87,14 +95,11 @@ function showQuestionIndex (currentQuestionIndex) {
   }
 
   $( "#gamePlay ul li" ).on( "click", function() {
-    // console.log( $( this ).attr('id') );
     currentQuestionIndex++;
     var previousQuestionIndex = currentQuestionIndex - 1;
-    console.log(previousQuestionIndex);
     $("h2").remove();
     $("ul").remove();
     if ($(this).attr('id') != quiz[previousQuestionIndex].correctAnswer){
-    // console.log(currentQuestionIndex-1);
     nextQuestion(currentQuestionIndex);
     timeleft = timeleft-10;
     }
@@ -104,34 +109,29 @@ function showQuestionIndex (currentQuestionIndex) {
   });
 }
 
-function startGame () {
-  startTimer();
-  document.getElementById("gameIntro").style.display = "none";
-  document.getElementById("gamePlay").style.display = "block";
-  showQuestionIndex (currentQuestionIndex);
-}
-
 function startOver() {
   document.getElementById("highScores").style.display = "none";
   document.getElementById("gameIntro").style.display = "inline-flex";
   document.getElementById("navigationBar").style.display = "inline-flex";
-  // startGame();
+  localStorage.clear();
+  timeleft = 0;
+  document.getElementById("countDownTimer").textContent = timeleft;
 }
 
 function clearHighScores () {
-
+  document.getElementById("scoreList").style.display = "none";
+  localStorage.clear();
 }
 
-function showHighScores (formValue) {
-  // $("#finalScore").remove();
+function showHighScores (userInit, userSc) {
   document.getElementById("finalScore").style.display = "none";
   document.getElementById("navigationBar").style.display = "none";
   document.getElementById("highScores").style.display = "inline-flex";
-  var scores = localStorage.getItem(userInitials, userScore);
-  console.log(scores);
-  // document.getElementById("scoreList").appendChild(scores);
-  // document.getElementById("goBack").addEventListener("click", startOver);
-  // document.getElementById("clearScores").addEventListener("click", clearHighScores);
+  userData = localStorage.getItem(userInit);
+  initials = localStorage.key(userInit);
+  document.querySelector("ol").innerHTML = "<li>" + initials + " - " + userData + "</li>";
+  document.getElementById("goBack").addEventListener("click", startOver);
+  document.getElementById("clearScores").addEventListener("click", clearHighScores);
 }
 
 let test = document.getElementById("startButton").addEventListener("click", startGame);
