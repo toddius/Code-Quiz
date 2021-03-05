@@ -17,3 +17,22 @@ I just need to solve how to create the quesitons one at a time and determine the
 
 Here is the link to the game:  https://toddius.github.io/Code-Quiz/
 
+## Code-Quiz resubmission
+
+In this version I was able to start and stop the timer based upon user input. I was able to take the time remaining and use that as the score. The application can take the user's initials and the time left (score) and save it to local storage. It can also retrieve data from local stoage and supply it on the high score page. It also clears the local storage and starts the game over. The one problem I was not able to solve was how to restart the timer when the game starts again. 
+
+### Screen shots of newest iteration
+
+![Start page](/Code Quiz/Assets/screen shots/Screen Shot 2021-03-05 at 3.29.21 AM?raw=true "Start page")
+
+![First Question](/Code Quiz/Assets/screen shots/Screen Shot 2021-03-05 at 3.29.39 AM?raw=true "First Question")
+
+![End of Game](/Code Quiz/Assets/screen shots/Screen Shot 2021-03-05 at 3.30.14 AM?raw=true "First Question")
+
+![High Score Page](/Code Quiz/Assets/screen shots/Screen Shot 2021-03-05 at 3.30.26 AM?raw=true "First Question")
+
+![Cleared High Score Page](/Code Quiz/Assets/screen shots/Screen Shot 2021-03-05 at 3.30.41 AM?raw=true "First Question")
+
+#### Link to quiz
+
+The link to the game is the same:  https://toddius.github.io/Code-Quiz/
